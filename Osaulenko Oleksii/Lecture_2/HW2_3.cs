@@ -2,23 +2,28 @@ using System;
 
 namespace Lecture2
 {
+
+
     class Program
     {
-        static void Main(string[] args)
+        enum HTTPError
         {
-            float min_num, max_num, f_num;
-            string message;
-            min_num = -5;
-            max_num = 5;
-            foreach (int i in Enumerable.Range(1, 3))
-            {
-                Console.WriteLine($"Please enter float nomber №{i}");
-                f_num = (float) Convert.ToDouble(Console.ReadLine());
-                _ = (f_num >= min_num && f_num <= max_num) ? message = $"Your number {f_num} in range [-5.5]" : message = $"Your number {f_num} NOT in range [-5.5]";
-                Console.WriteLine(message);
-            }
-            Console.ReadKey();
+            Continue = 100,
+            OK = 200,
+            SeeOther = 303,
+            BadReques = 400,
+            Forbidden = 403,
+            NotFound = 404,
+            BadGateway = 502,
+            HTTPVersionNotSupported = 505
         }
 
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Enter 3-sign code of HTTP error");
+            int res = Convert.ToInt32(Console.ReadLine());
+            Console.Write($"Code {res} is \"{(HTTPError)res}\"");
+            Console.ReadKey();
+        }
     }
 }
