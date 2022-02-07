@@ -14,7 +14,7 @@ namespace Lecture2
             {
                 Console.WriteLine($"Please enter float nomber №{i}");
                 f_num = (float) Convert.ToDouble(Console.ReadLine());
-                _ = (f_num >= min_num && f_num <= max_num) ? message = $"Your number {f_num} in range [-5.5]" : message = $"Your number {f_num} NOT in range [-5.5]";
+                message = (f_num >= min_num && f_num <= max_num) ? message = $"Your number {f_num} in range [-5.5]" : message = $"Your number {f_num} NOT in range [-5.5]";
                 Console.WriteLine(message);
             }
             Console.ReadKey();
