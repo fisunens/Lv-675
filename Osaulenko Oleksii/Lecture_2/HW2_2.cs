@@ -6,17 +6,18 @@ namespace Lecture2
     {
         static void Main(string[] args)
         {
-            float min_num, max_num, f_num;
-            string message;
-            min_num = -5;
-            max_num = 5;
-            foreach (int i in Enumerable.Range(1, 3))
+            int num, min_num, max_num;
+            Console.WriteLine($"Please enter integer nomber ¹1");
+            max_num = Convert.ToInt32(Console.ReadLine());
+            min_num = max_num;
+            foreach (int i in Enumerable.Range(2, 2))
             {
-                Console.WriteLine($"Please enter float nomber â„–{i}");
-                f_num = (float) Convert.ToDouble(Console.ReadLine());
-                _ = (f_num >= min_num && f_num <= max_num) ? message = $"Your number {f_num} in range [-5.5]" : message = $"Your number {f_num} NOT in range [-5.5]";
-                Console.WriteLine(message);
+                Console.WriteLine($"Please enter integer nomber ¹{i}");
+                num = Convert.ToInt32(Console.ReadLine());
+                min_num = num < min_num ? num : min_num;
+                max_num = num > max_num ? num : max_num;
             }
+            Console.WriteLine($"MAX number is {max_num}, MIN number is {min_num}");
             Console.ReadKey();
         }
 
